@@ -353,7 +353,12 @@ sub-page .form-control .input-group-append{
 	font-size: 36px;
 	margin-left: 50px;
 }
-
+#page .container-fluid.content-div{
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+	background: #ebf1f1;
+	color: red;
+}
 @media(max-width: 990px){
 	#page .navbar {
 		height: auto;

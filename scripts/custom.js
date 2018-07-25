@@ -15,7 +15,7 @@
       //alert("hi risro");
       
         $.ajax({
-          url: "menu.html", 
+          url: $(".menu-item").html().trim(), 
           success: function(result){
             $(".menu-item").html(result);
             //e.preventDefault();
