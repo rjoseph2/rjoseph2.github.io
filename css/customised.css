@@ -324,7 +324,7 @@ sub-page .form-control .input-group-append{
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: #2f8bd6;
+	background-color: #2196F3;
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
@@ -337,7 +337,7 @@ sub-page .form-control .input-group-append{
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	font-size: 25px;
-	color: #9b28b0;
+	color: black;
 	display: block;
 	transition: 0.3s;
 }
@@ -408,7 +408,8 @@ sub-page .form-control .input-group-append{
 		z-index: 1;
 		top: 0;
 		left: 0;
-		background-color: #2f8bd6;
+		
+		background:linear-gradient(145deg, #2d94ea 50%, #2dbddb 100%);
 		overflow-x: hidden;
 		transition: 0.5s;
 		padding-top: 60px;
