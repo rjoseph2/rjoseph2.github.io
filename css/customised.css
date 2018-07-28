@@ -359,6 +359,23 @@ sub-page .form-control .input-group-append{
 	background: #ebf1f1;
 	color: red;
 }
+
+#page .content-p{
+	font-size: 15px;
+    padding-top: 10px;
+    word-wrap: break-word;
+}
+.font-14{
+	font-size: 14px;
+}
+.code-div{
+	font-size: 14px;
+	font-size: 14px;
+    border: 1px solid black;
+    width: 80%;
+	padding-left: 15px;
+	overflow: auto;
+}
 @media(max-width: 990px){
 	#page .navbar {
 		height: auto;
