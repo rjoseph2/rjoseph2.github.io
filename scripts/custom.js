@@ -8,7 +8,10 @@
     else
       $('#home > .navbar').addClass('navbar-transparent');
   });
-
+ 
+  $(window).resize(function () {
+    location.reload()
+  });
 
   /*append the header menu start */
   var mainMenuCall = function () {
@@ -34,6 +37,15 @@
           $(".menu_place_holder").replaceWith(result);
           closeNavMenu();
           navarrowClick();
+          var contentDiv = $(".content-div");
+          contentDiv.removeClass('col-lg-12').addClass('col-lg-9');
+          contentDiv.removeClass('col-sm-12').addClass('col-sm-11');
+          contentDiv.addClass('offset-lg-3');
+          contentDiv.addClass('offset-md-3');
+          contentDiv.addClass('offset-sm-1');
+          $(".nav-arrow").css("z-index",'1');
+          var parentDiv = contentDiv.parent();
+          parentDiv.parent().removeClass("container").addClass("container-fluid");
         },
         error: {
           //do nothing

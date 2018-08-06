@@ -257,7 +257,7 @@ pre {
  padding-top: 5.5rem;
 }
 #page .navbar {
-	background: #2f8bd6;
+	background:transparent;
 }
 .sub-page .form-group {
 	margin-bottom: 0rem;
@@ -324,7 +324,7 @@ sub-page .form-control .input-group-append{
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: #2196F3;
+	background-color: transparent;
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
@@ -426,7 +426,7 @@ sub-page .form-control .input-group-append{
 		top: 0;
 		left: 0;
 		
-		background:linear-gradient(145deg, #2d94ea 50%, #2dbddb 100%);
+		/*background:linear-gradient(145deg, #2d94ea 50%, #2dbddb 100%);*/
 		overflow-x: hidden;
 		transition: 0.5s;
 		padding-top: 60px;
