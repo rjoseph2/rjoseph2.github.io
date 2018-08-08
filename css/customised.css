@@ -388,7 +388,7 @@ sub-page .form-control .input-group-append{
 #page .content-div{
 	height: 100%;
     padding: 2rem;
-    width: 200px;
+    
     margin-right: 10px;
     max-width: 73%;
     margin-bottom: 20px;
@@ -508,5 +508,13 @@ sub-page .form-control .input-group-append{
 @media screen and (max-height: 450px) {
 	.sidenav {padding-top: 15px;}
 	.sidenav a {font-size: 18px;}
+	#page .content-div{
+		height: 100%;
+		padding: 1rem;
+		
+		margin-right: 10px;
+		max-width: 100%;
+		margin-bottom: 20px;
+	}
   }
   
