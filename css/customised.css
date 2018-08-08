@@ -445,6 +445,7 @@ sub-page .form-control .input-group-append{
 		margin-top: 20%;
 		padding-left: 0;
 		color: #2196f3;
+		font-size: 36px;
 	}
 	.sub-page-search.ml-auto{
 		margin-left: 0px !important;
