@@ -10,7 +10,7 @@
   });
  
   $(window).resize(function () {
-    location.reload()
+    //location.reload()
   });
 
   /*append the header menu start */
@@ -41,7 +41,7 @@
           contentDiv.removeClass('col-lg-12').addClass('col-lg-9');
           contentDiv.removeClass('col-sm-12').addClass('col-sm-11');
           contentDiv.addClass('offset-lg-3');
-          contentDiv.addClass('offset-md-3');
+          contentDiv.addClass('offset-md-1');
           contentDiv.addClass('offset-sm-1');
           $(".nav-arrow").css("z-index",'1');
           var parentDiv = contentDiv.parent();
@@ -81,9 +81,8 @@
   var closeNavMenu = function(){
     $(".navdiv  a").bind("click", function () {
       var link = $(".navdiv a").attr('href')
-      if ($(document).width() < 991) {
-        $(".navdiv").fadeOut();
-      }
+      $(".navdiv").fadeOut();
+      
     });
   }
   var closeNav = function () {
