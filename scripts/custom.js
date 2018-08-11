@@ -16,13 +16,16 @@
   /*append the header menu start */
   var mainMenuCall = function () {
     if ($(".menu-item") != undefined && $(".menu-item").html() != undefined 
-    && $(".menu-item").html() != "") {
+    && $(".menu-item").html().trim() != "" ) {
       $.ajax({
         url: $(".menu-item").html().trim(),
         success: function (result) {
           $(".menu-item").html(result);
         }
       });
+    }else {
+      $('.collapse').addClass("hidden");
+      $('.collapse').css("display" , 'none')
     }
 
   }
@@ -52,14 +55,21 @@
         }
       });
     } else {
-      var contentDiv = $(".content-div");
-      contentDiv.removeClass('col-lg-9').addClass('col-lg-12');
-      var parentDiv = contentDiv.parent();
-      parentDiv.parent().removeClass("container-fluid").addClass("container");
+      adjustDisplayContentDiv();
 
     }
 
   }
+  adjustDisplayContentDiv = function(){
+    var contentDiv = $(".content-div");
+      contentDiv.addClass('col-md-12');
+      contentDiv.addClass('col-sm-12');
+      contentDiv.css("max-width", "100%")
+      contentDiv.css("width", "100%")
+      contentDiv.removeClass('col-lg-9').addClass('col-lg-12');
+      var parentDiv = contentDiv.parent();
+      parentDiv.parent().removeClass("container-fluid").addClass("container");
+  }; 
 
   $(document).ready(function () {
     mainMenuCall();
