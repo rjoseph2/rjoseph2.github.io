@@ -21,6 +21,10 @@
         url: $(".menu-item").html().trim(),
         success: function (result) {
           $(".menu-item").html(result);
+        },
+        error : function(result){
+          $('.collapse').addClass("hidden");
+      $('.collapse').css("display" , 'none')
         }
       });
     }else {
@@ -50,8 +54,8 @@
           var parentDiv = contentDiv.parent();
           parentDiv.parent().removeClass("container").addClass("container-fluid");
         },
-        error: {
-          //do nothing
+        error: function(results) {
+          adjustDisplayContentDiv();
         }
       });
     } else {
