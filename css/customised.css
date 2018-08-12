@@ -338,7 +338,10 @@ sub-page .form-control .input-group-append{
 
 .navdiv .card{
 	height: 99%;
+	margin: 0 !important;
+    padding-right: 0 !important;
 	margin-bottom: 20px;
+	
 }
 
 .navdiv .card-body{
@@ -348,26 +351,52 @@ sub-page .form-control .input-group-append{
     height: 100%;
 	overflow-x: hidden;
     overflow-y: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+	background: white;
+	-moz-box-shadow: inset inset -1px 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset -1px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: inset -1px 1px 3px rgba(0,0,0,0.5);
 }
 .navdiv .card-body ul {
 	list-style-type: none;
 	margin:0 !important;
 	padding: 0 !important;
-  }
+}
+.navdiv .card-body ul li,
+.navdiv .card-body ul li.card{
+	border-bottom: solid .001rem #2196f3;
+}
 
 .navdiv a {
-	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	font-size: 25px;
 	color: black;
 	display: block;
 	transition: 0.3s;
+	padding-left: 20px;
+    padding-top: 8px;
+    font-size: 22px;
 }
 .navdiv li:hover ,
 .navdiv li a:hover {
 	color: #2196f3;
     background: #f7f7f7;
-    margin-right: -20px;
+	
+}
+.last-menu-header{
+	padding-bottom: 16px !important;
+	
+	-moz-box-shadow: inset 0 -7px 25px  rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0 -7px 25px  rgba(0,0,0,0.5);
+	box-shadow: inset 0 -7px 25px  rgba(0,0,0,0.5);
+}
+.top-menu-header{
+	padding-bottom: 16px !important;
+	
+	-moz-box-shadow: inset 0 -7px 25px  rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0 -7px 25px  rgba(0,0,0,0.5);
+	box-shadow: inset 0 -7px 25px  rgba(0,0,0,0.5);
 }
 
 .navdiv .closebtn {
@@ -499,17 +528,12 @@ sub-page .form-control .input-group-append{
 		background-color: transparent;
 
 	}
-	.last-menu-header{
-		padding-bottom: 16px !important;
-		margin-top: 13px;
-	}
-	.top-menu-header{
-		padding-bottom: 16px !important;
-		margin-bottom: 13px;
-	}
+	
 	.navdiv .card-body{
 		padding-left: 0 !important;
 		margin: 0 !important;
+		margin: 0 !important;
+    	padding-right: 0 !important;
 	}
 	.navdiv .card-body ul {
 		list-style-type: none;
