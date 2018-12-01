@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+
+<head>
+  <script src="./JS/jquery-3.3.1.min.js"> </script>
+  <script src="./JS/custom.js"></script>
+  <script src="./JS/marvinj-0.9.js"> </script>
+  <script src="./JS/bootstrap.js"> </script>
+
+  <link type="text/css" rel="stylesheet" href="./CSS/main.css" />
+  <link type="text/css" rel="stylesheet" href="./CSS/bootstrap.css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-sm bg-light">
+
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="loadFile()">Open</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showModel('myModal')">Grid</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showModel('MarkerModel')">MarkCell</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="saveImage()">Save</a>
+        </li>
+      </ul>
+
+    </nav>
+    <div class="canvas-div">
+      <canvas id="myImg" class="canvasStyle" width="578" height="200"></canvas>
+      <canvas id="gridLayer" class="canvasStyle" width="578" height="200"></canvas>
+      <canvas id="finalImg" class="canvasStyle" style="display:none;" width="578" height="200"></canvas>
+      <canvas id="cellMarker" class="canvasStyle" width="578" height="200" onclick="mouseclick(event)"></canvas>
+    </div>
+  </div>
+  <div class="main">
+
+
+
+  </div>
+  <input type="file" onchange="loadToCanavas()" id="file-loader" style="display:none;" />
+  <a id="a" style="display:none">download </a>
+  <div> <label for="" id="showConvertor"></label></div>
+
+  
+
+  <!-- Modal content -->
+
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Grid Settings</h4>
+          <button type="button" id="modelClose" onclick="closeModel('myModal')" class="close">&times;</button>
+
+        </div>
+        <div class="modal-body">
+          
+          <div class="form-group row">
+            <label class ="col-sm-3" for="Rows">Rows:</label>
+            <input class ="col-sm-3" type="text" id="rowCount" value="1" />
+
+            <label for="colomnCount" class ="col-sm-3">Coloms:</label>
+            <input type="text"  class ="col-sm-3" id="colomnCount" value="3" />
+          </div>
+          
+          <div class="form-group row">
+             <h5> <label for="email" class ="col-sm-12">Proportion (In cm):</label></h5>
+          </div>
+        
+          <div class="form-group row">
+              <label for="email" class ="col-sm-4">Row scale :</label>
+              <input type="text" class ="col-sm-2" id="rowProp" value="1" />
+              <label for="email" class ="col-sm-4">Colomn scale:</label>
+              <input type="text" class ="col-sm-2" id="ColsProp" value="1" />
+            </div>
+           
+            <div class="form-group row">
+                <label for="email" class ="col-sm-4">Line Color:</label>
+                <input type="color" class ="col-sm-2"id="gridColor" value="#F5340B" />
+                <label class ="col-sm-4" for="Rows">Partial Gried:</label>
+                <input type="checkbox"  class ="col-sm-2" id="partial" checked />
+            </div>
+              
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" onclick="closeModel('myModal')">Close</button>
+          <button type="button" class="btn btn-default" onclick="drawGrid()" >Submit</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div id="MarkerModel" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+  
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Mark Cell Settings</h4>
+            <button type="button" id="modelClose" class="close" onclick="closeModel('MarkerModel')">&times;</button>
+  
+          </div>
+          <div class="modal-body">
+            
+            <div class="form-group row">
+              <label class ="col-sm-6" for="Rows">Font Color:</label>
+              <input type="color"  class ="col-sm-6 ml-3" id="markerColor" value="#ff0011" />
+            </div>
+
+            <div class="form-group row">
+                <label class ="col-sm-6" for="Rows">Font Size:</label>
+                <input type="text"  class ="col-sm-6 ml-3" id="fontSize" value="10" />
+            </div>
+
+            <div class="form-group row">
+                <label class ="col-sm-6" for="Rows">marker Opacity:</label>
+                <input type="text"  class ="col-sm-6 ml-3" id="markerOpac" value=".5" />
+            </div>
+            
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" onclick="closeModel('MarkerModel')">Close</button>
+            <button type="button" class="btn btn-default" onclick="markCel()" >Submit</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+    <div id="Warning" class="modal fade bg-alert" role="dialog">
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Warning</h4>
+              <button type="button" id="modelClose" class="close" onclick="closeModel('Warning')">&times;</button>
+    
+            </div>
+            <div class="modal-body">
+              <span id="warningBody"></span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" onclick="closeModel('Warning')">Close</button>
+              
+            </div>
+          </div>
+    
+        </div>
+      </div>
+
+
+</body>
+
+</html>
